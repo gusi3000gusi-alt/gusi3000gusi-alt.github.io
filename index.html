@@ -155,14 +155,6 @@
             color: #ffffff;
             border-color: #ff0055;
         }
-
-        .inner-panel {
-            background: rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
@@ -175,8 +167,7 @@
 
         <div class="glass-panel">
             <h2>Архитектура платформы</h2>
-            <p>Защищенный клиент обмена мгновенными сообщениями, разработанный для обеспечения полной конфиденциальности конечных узлов. Все передаваемые пакеты данных проходят сквозное криптографическое шифрование перед отправкой в облачную инфраструктуру Firestore. Доступ к интерфейсу чатов изолирован и предоставляется исключительно после точечной аутентификации идентификатора пользователя.</p>
-            <!-- ОБЕ КНОПКИ ТЕПЕРЬ ТУТ -->
+            <p>Защищенный клиент обмена мгновенными сообщениями, разработанный для обеспечения полной конфиденциальности конечных узлов. Все передаваемые пакеты данных проходят сквозное криптографическое шифрование перед отправкой в облачную инфраструктуру Firestore. Доступ к интерфейсу чатов изолирован и предоставляется исключительно после точечной атентификации идентификатора пользователя.</p>
             <a href="https://disk.yandex.ru/d/KkGR-E3itrWcDA" target="_blank" class="btn">Скачать для Android (.APK)</a>
             <a href="https://disk.yandex.ru/d/E-GJum6iaNkBqA" target="_blank" class="btn">Скачать для ПК (.EXE)</a>
         </div>
@@ -205,24 +196,19 @@
             <div class="input-group">
                 <input type="email" id="userEmail" class="input-field" placeholder="Укажите ваш Email, зарегистрированный в мессенджере" required>
             </div>
-            <button onclick="toggleDonation()" class="btn btn-action">Инициировать перевод через Ozon Банк</button>
-
-            <div id="donationPanel" style="display: none;" class="inner-panel">
-                <p>Выполните прямое пожертвование по Системе быстрых платежей (СБП) на карту Ozon Банка:</p>
-                <h3 style="color: #ffffff; margin: 10px 0; font-size: 1.3rem; letter-spacing: 0.05rem;">+7 (XXX) XXX-XX-XX</h3>
-                <p style="font-size: 0.85rem; color: #727282; margin-bottom: 0;">В примечании к банковскому переводу обязательно укажите ваш Email. Автоматизированный облачный триггер Firestore верифицирует транзакцию и предоставит статус Neon Premium в течение нескольких минут.</p>
-            </div>
+            <button onclick="redirectToDonation()" class="btn btn-action">Перейти к оплате доната</button>
         </div>
     </div>
 
     <script>
-        function toggleDonation() {
+        function redirectToDonation() {
             var email = document.getElementById('userEmail').value;
             if(email.trim() === "" || !email.includes('@')) {
                 alert("Для продолжения необходимо ввести корректный Email адрес учетной записи.");
                 return;
             }
-            document.getElementById('donationPanel').style.display = 'block';
+            // Перенаправление на личную страницу DonationAlerts
+            window.open("https://www.donationalerts.com/r/goosteams", "_blank");
         }
     </script>
 </body>
