@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="neX4JW07MpGDQ_5KfloJCvouvbxT6PRkaohGAhC-O-c" />
+    <meta name="yandex-verification" content="d97c627a61fbd7e4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goos Teams // Official Secure Client</title>
+    <style>
+        body {
+            background-color: #08080c;
+            background-image: radial-gradient(circle at 20% 30%, #150914 0%, transparent 40%),
+                              radial-gradient(circle at 80% 70%, #05141c 0%, transparent 40%);
+            color: #ececf2;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: 60px 0;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.05rem;
+            color: #ffffff;
+            margin: 0 0 8px 0;
+        }
+
+        .system-status {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            color: #00ffcc;
+        }
+
+        .glass-panel {
+            background: rgba(18, 18, 26, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .glass-panel h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #ffffff;
+            border-left: 3px solid #ff0055;
+            padding-left: 12px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #b0b0bc;
+            margin-bottom: 20px;
+        }
+
+        /* ПОЧИНЕННАЯ ГАЛЕРЕЯ СКРИНШОТОВ */
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+            width: 100%;
+        }
+
+        .screenshot-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-item:hover {
+            transform: scale(1.03);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .input-field:focus {
+            border-color: #ff0055;
+        }
+
+        .btn {
+            display: inline-block;
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 28px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #ffffff;
+            color: #08080c;
+            border-color: #ffffff;
+        }
+
+        .btn-action {
+            border-color: #ff0055;
+            color: #ff0055;
+        }
+
+        .btn-action:hover {
+            background: #ff0055;
+            color: #ffffff;
+            border-color: #ff0055;
+        }
+
+        .inner-panel {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Goos teams</h1>
+            <div class="system-status">Secure Messaging // E2EE Client</div>
+        </header>
+
+        <div class="glass-panel">
+            <h2>Архитектура платформы</h2>
+            <p>Защищенный клиент обмена мгновенными сообщениями, разработанный для обеспечения полной конфиденциальности конечных узлов. Все передаваемые пакеты данных проходят сквозное криптографическое шифрование перед отправкой в облачную инфраструктуру Firestore. Доступ к интерфейсу чатов изолирован и предоставляется исключительно после точечной аутентификации идентификатора пользователя.</p>
+            <a href="https://disk.yandex.ru/d/KkGR-E3itrWcDA" target="_blank" class="btn">Скачать клиент для Android</a>
+        </div>
+
+        <div class="glass-panel">
+            <h2>Интерфейс приложения</h2>
+            <p>Архитектура графической оболочки построена на базе фреймворка Fyne. Визуальный стиль реализован в контрастной темной палитре с настраиваемыми неоновыми акцентами для снижения нагрузки на зрение в темное время суток.</p>
+            
+            <!-- ПУТИ ИСПРАВЛЕНЫ НА НАПРЯМУЮ К ДИСКУ H: -->
+            <div class="screenshot-grid">
+<div class="screenshot-grid">
+    <div class="screenshot-item">
+        <img src="screen1.jpg" alt="Чаты">
+    </div>
+    <div class="screenshot-item">
+        <img src="screen2.jpg" alt="Настройки">
+    </div>
+    <div class="screenshot-item">
+        <img src="screen3.jpg" alt="Шифрование">
+    </div>
+</div>
+<head>
+        </div>
+
+        <div class="glass-panel">
+            <h2>Поддержка независимой разработки</h2>
+            <p>Проект развивается без привлечения рекламных сетей и платных подписок. Если вы хотите внести вклад в поддержку серверов и ускорить выпуск обновлений, вы можете отправить прямое пожертвование без скрытых комиссий сторонних магазинов приложений.</p>
+            
+            <div class="input-group">
+                <input type="email" id="userEmail" class="input-field" placeholder="Укажите ваш Email, зарегистрированный в мессенджере" required>
+            </div>
+            <button onclick="toggleDonation()" class="btn btn-action">Инициировать перевод через Ozon Банк</button>
+
+            <div id="donationPanel" style="display: none;" class="inner-panel">
+                <p>Выполните прямой перевод по Системе быстрых платежей (СБП) на карту Ozon Банка:</p>
+                <h3 style="color: #ffffff; margin: 10px 0; font-size: 1.3rem; letter-spacing: 0.05rem;">+7 (XXX) XXX-XX-XX</h3>
+                <p style="font-size: 0.85rem; color: #727282; margin-bottom: 0;">В примечании к банковскому переводу обязательно укажите ваш Email. Автоматизированный облачный триггер Firestore верифицирует транзакцию и предоставит статус Neon Premium в течение нескольких минут.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDonation() {
+            var email = document.getElementById('userEmail').value;
+            if(email.trim() === "" || !email.includes('@')) {
+                alert("Для продолжения необходимо ввести корректный Email адрес учетной записи.");
+                return;
+            }
+            document.getElementById('donationPanel').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
